@@ -1,0 +1,28 @@
+nav.breadcrumb {
+    height: 50px;
+    background-color: #eee;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  nav.breadcrumb span {
+    font-size: 0.7rem;
+    color: #5c727d;
+    padding: 3px 0 0 0;
+  }
+  nav.breadcrumb .link {
+    color: #000;
+    padding: 10px;
+  }
+  nav.breadcrumb .link.active {
+    color: #5c727d;
+  }
+  @media screen and (max-width: 400px) {
+    nav.breadcrumb .link {
+      font-size: 10px;
+    }
+    nav.breadcrumb span {
+      font-size: 6px;
+    }
+  }
+  

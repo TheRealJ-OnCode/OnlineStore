@@ -1,0 +1,85 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Detallar
+        include /partials/base/config.pug
+        //- ! include partials
+        link(rel="stylesheet" href="/css/partials/nav.css")
+        link(rel="stylesheet" href="/css/partials/footer.css")
+        link(rel="stylesheet" href="/css/partials/product/product.css")
+        link(rel="stylesheet" href="/css/partials/new-product.css")
+        link(rel="stylesheet" href="/css/partials/cart-notification.css")
+        link(rel="stylesheet" href="/css/product-details.css")
+
+    body 
+        #cart-notification 
+            p Lorem ipsum dolor sit amet.
+        include /partials/breadcrumb.pug
+        include /partials/nav.pug
+        include /partials/header-text.pug
+        include /partials/product.pug
+        +breadcrumb([
+            { text: "Ana Səhifə", link: "/" },
+            { text: "Məhsullar", link: "/products" },
+            { text:product.product_name,link:uri,active : true }
+        ])
+        main#details-wrapper.container
+            #product-img-wrapper 
+                #main-img
+                    img(src=product.product_images[0] alt=product.prodcut_name)
+                #product-other-imgs
+                    each img in product.product_images 
+                        img(src=img, alt=product.product_name) 
+
+
+            #product-details 
+                #product-name=product.product_name
+                
+                if product.product_alternatives.length > 0
+                    #product-variants
+
+                        label=product.productDifferationMetric
+
+                        .d-flex.variant-conatiner 
+                            each alternative in product.product_alternatives
+                                if alternative === product.product_alternatives[0]
+                                    .variant.selected(data-key=alternative.key data-price=alternative.price)=alternative.value
+                                else 
+                                    .variant(data-key=alternative.key data-price=alternative.price)=alternative.value
+
+
+                
+                #product-price 
+                    span#product-price-text=product.product_sales_price + " azn" 
+                #product-category Kategorya |  
+                    a(href=`/products?category=${product.product_category}`)= product.product_category
+                #product-in-stock-info Stokda Var | 
+                    span=product.inStock ? "Var" : "Yoxdur"
+                #product-description 
+                    p=product.product_description
+                #product-cart-ops 
+                    #product-count-btns 
+                        button#decrease-btn - 
+                        #product-cart-count 1 
+                        button#increase-btn +
+                    button#add-to-cart Səbətə at
+
+        #other-products.container 
+            +headerTemplate("Eyni kategoriyalı məhsullar")
+            .product-row 
+                each product in categoryProducts
+                    +product(product.product_name,"/product/view?pid="+product.pid+"&product_name="+product.product_name,product.product_images[0],product.product_sales_price + " azn",product.discountAmount,product.pid)
+    script(type="module" src="/js/models/navModel/navController.js") 
+    script(type="module" src="/js/models/detailsPageModel/detailsController.js") 
+
+
+
+
+
+
+
+
+
+

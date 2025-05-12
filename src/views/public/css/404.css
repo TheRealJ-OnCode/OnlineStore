@@ -1,0 +1,72 @@
+ /* Ümumi reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Saytında hansı font istifadə olunursa onu yaz */
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #333333;
+  }
+
+
+
+
+  /* "Belə bir səhifə yoxdur" bölməsi */
+  .not-found-section {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .not-found-section img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .not-found-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #c0392b;
+  }
+
+  .not-found-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .btn-home {
+    display: inline-block;
+    background-color: #c0392b;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-home:hover {
+    background-color: #a72f22; /* Bir az tünd rəng */
+  }
+
+  /* Footer stili */
+  footer {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+  }
+
+  footer p {
+    color: #666666;
+    font-size: 0.9rem;
+  }
+
+  

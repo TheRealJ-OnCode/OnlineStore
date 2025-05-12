@@ -1,0 +1,35 @@
+#home-banner {
+  position: relative;
+  width: 100%;
+}
+#home-banner img {
+  width: 100%;
+  height: 550px;
+  /* object-fit: contain; */
+}
+#home-banner #banner-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+#home-banner #banner-text h1 {
+  font-size: 45px;
+  color: #B90707;
+}
+#home-banner #banner-text h5 {
+  padding: 10px;
+  font-size: 25px;
+  color: #da2222;
+}
+#home-banner #banner-text button {
+  outline: none;
+  border: none;
+  padding: 5px 30px;
+  cursor: pointer;
+  margin: 10px 0;
+  background-color: #fff;
+  color: #B90707;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}

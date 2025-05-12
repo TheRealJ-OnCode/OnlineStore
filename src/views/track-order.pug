@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Sifarişi İzlə 
+        //- ! include base css
+        include /partials/base/config.pug
+        //- ! include partials css
+        link(rel="stylesheet" href="/css/partials/nav.css")
+        link(rel="stylesheet" href="/css/partials/footer.css")
+        //- ! include page special css
+        link(rel="stylesheet" href="/css/track-order.css")
+    body
+        include /partials/nav.pug
+        main#track-order 
+            h3#mmmtext Sifariş nömrəniz ilə sifarişinizin statusunu öyrənin ...
+            #search-order 
+                input#order-id(type="text" placeholder = "ORD-1596789140900-1234" )
+                button#search-order-btn Axtar 
+            #order-content 
+                
+        script(src="https://unpkg.com/sweetalert/dist/sweetalert.min.js") 
+        script(type="module" src="/js/models/trackOrderPageModel/trackOrderController.js") 
+

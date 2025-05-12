@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title 404
+    include /partials/base/config.pug
+    link(rel="stylesheet" href="/css/partials/nav.css")
+    link(rel="stylesheet" href="/css/404.css")
+  body 
+    include /partials/nav.pug
+    section.not-found-section
+      img(src='/imgs/404.png' alt='Səhifə tapılmadı illüstrasiyası')
+      h1 &Uuml;zr ist&#x259;yirik, bel&#x259; bir s&#x259;hif&#x259; yoxdur!
+      p
+        | Axtard&imath;&gbreve;&imath;n&imath;z s&#x259;hif&#x259; m&ouml;vcud deyil v&#x259; ya silinmi&scedil; ola bil&#x259;r. Z&#x259;hm&#x259;t olmasa ana s&#x259;hif&#x259;y&#x259; qay&imath;d&imath;n v&#x259; ya menyudan dig&#x259;r s&#x259;hif&#x259;l&#x259;r&#x259; ke&ccedil;id edin.
+      a.btn-home(href='/') Ana S&#x259;hif&#x259;
+    footer
+      p &copy; 2025 tacir store. B&uuml;t&uuml;n h&uuml;quqlar qorunur.

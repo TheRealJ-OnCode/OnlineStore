@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Tacir Store Ana Səhifə
+    link(rel="icon" href="/icons/main-logo.svg" type="image/x-icon")
+    include /partials/base/config.pug
+    //- ! partials css
+    link(rel="stylesheet" href="/css/partials/nav.css")
+    link(rel="stylesheet" href="/css/partials/footer.css")
+    link(rel="stylesheet" href="/css/partials/product/product.css")
+
+    link(rel="stylesheet" href="/css/partials/home-banner.css")
+    link(rel="stylesheet" href="/css/partials/new-product.css")
+    
+
+  body
+    
+    include /partials/header-text.pug
+    include /partials/nav.pug
+    include /partials/home/home-banner.pug
+    +headerTemplate("Yeni Məhsullar")
+    include /partials/home/new-product.pug
+    +headerTemplate("Təsadüfi seçilən məhsullar")
+    include /partials/home/random-product.pug
+    include /partials/footer.pug
+   
+
+
+    //- script(src="/js/scripts/nav.js") 

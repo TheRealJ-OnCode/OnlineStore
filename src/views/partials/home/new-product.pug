@@ -1,0 +1,8 @@
+include /partials/product.pug
+#new-products-container.container
+    if newProducts
+
+        .product-row
+            each product in newProducts
+                +product(product.product_name,"/product/view?product_name="+product.product_name + "&pid=" + product.pid,product.product_images[0],product.product_sales_price + " azn",product.discountAmount,product.pid)
+                

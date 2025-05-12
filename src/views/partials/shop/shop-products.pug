@@ -1,0 +1,23 @@
+include /partials/product.pug
+#products-container
+    select#sort-product(name="sort-product")
+        option(value="asc") Qiymət çoxdan aza
+        option(value="desc") Qiymət azdan çoxa
+        option(value="all" selected) Hamsı
+
+
+    #_s-product-row
+        each item in products
+            +product(
+                item.product_name
+                ,"/product/view?product_name="+item.product_name + "&pid=" + item.pid
+                ,item.product_images[0],
+                item.product_sales_price + " azn"
+                ,item.discountAmmount)
+    #shop-pagination
+        each page in [...Array(totalPages).keys()].map(n => n + 1)
+            if page === currentPage
+                a.pg.active(href=`/products?page=${page}`) #{page}
+            else
+                a.pg(href=`/products?page=${page}`) #{page}
+        //-

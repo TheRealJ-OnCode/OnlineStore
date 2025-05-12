@@ -1,0 +1,7 @@
+link(rel="stylesheet", href="/css/partials/breadcrumb.css")
+mixin breadcrumb(pathArray)
+  nav.breadcrumb.container
+    each item, index in pathArray
+      if index != 0
+        span <i class="fa-regular fa-angle-right"></i>
+      a(href=item.link class=!item.active ? 'active link' : 'link') #{item.text}

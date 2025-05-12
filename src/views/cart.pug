@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Səbət 
+        //- ! include base css
+        include /partials/base/config.pug
+        //- ! include partials css
+        link(rel="stylesheet" href="/css/partials/nav.css")
+        link(rel="stylesheet" href="/css/partials/footer.css")
+        //- ! include page special css
+        link(rel="stylesheet" href="/css/cart.css")
+    body 
+        include /partials/nav.pug
+        main#cart-container.container
+            #items 
+                each item in userCart
+                    .item-wrapper 
+                        .item-img
+                            img(src=item.img, alt=item.name)
+                        .item-details-info 
+                            .item-name 
+                                a(href="product/view?product_name="+item.name+"&pid="+item.productId)= item.name
+                            .item-category
+                                a(href="/products?product_category="+item.category)
+                                    span Kategoriya 
+                                        =item.category  
+                        .item-actions(data-pid=`${item.productId}`, data-variant=`${item.variant ? item.variant : ''}`) 
+                            button.decrease.count-btn - 
+                            span= item.quantity
+                            button.increase.count-btn +
+
+
+                        .item-price
+                            span= item.price  + " azn"
+                        .item-delete(data-pid=`${item.productId}`, data-variant=`${item.variant ? item.variant : ''}`) 
+                            span x
+            if cartTotal > 0
+                #summary-box
+                    span.h-text Sifariş Detalları
+                    div 
+                        span Məhsulların cəmi
+                        span= cartTotal + " azn"
+                    div 
+                        span Endirim
+                        span 0%
+                    div#discount-amount 
+                        span Ümumi Qiymət 
+                        span= cartTotal + " azn"
+                    button#confirm-order 
+                        a(href="/checkout") Səbəti Təsdiqlə  
+            else 
+                #cart-is-empty-wrapper   
+                    h1 Səbətiniz boşdur
+                    button 
+                        a(href="/products") Alışverişə başla 
+
+    script(type="module", src="/js/models/cartPageModel/cartController.js") 

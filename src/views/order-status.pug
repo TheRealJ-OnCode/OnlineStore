@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title=pageTitle
+        include /partials/base/config.pug
+        link(rel="stylesheet", href="/css/_base.css")
+        link(rel="stylesheet", href="/css/partials/nav.css")
+        link(rel="stylesheet", href="/css/orderStatus.css")
+    body 
+        main 
+            include partials/nav.pug
+            p#message!=message
+            #banner 
+                img(src="/imgs/"+img, alt="")

@@ -1,0 +1,67 @@
+#nav-overlay
+header 
+    nav.container 
+        #site-logo  
+            a(href="/") 
+                img(src="/icons/main-logo.svg" alt="LOGO")  
+        #search-container 
+            #about-phone 
+                <i class="fa-thin fa-phone-volume"></i>
+                .column 
+                    #phone-text Telefon 
+                    #phone-number 050-345-96-37
+            #search-input-container 
+                input(type="text" placeholder = "Mağazada axtarın")#search-input
+                <i class="fa-thin fa-magnifying-glass"></i>
+
+        #user-cart
+            #search-mobile 
+                i.fa-thin.fa-magnifying-glass#search-icon-mobile
+                #mobile-search-container
+                    #child-search-container 
+                        input#mobile-search-input(placeholder = "Mağazada axtarın")
+                        <i class="fa-thin fa-magnifying-glass"></i>
+
+            #cart-icon 
+                <i class="fa-sharp fa-light fa-cart-shopping"></i>
+                #cart-count 0
+            .column 
+                #cart-text Səbətiniz
+                #cart-price 0.00 azn
+            #cart-content
+                h4.text-center Məhsullar
+                #cart-is-empty 
+                        h3 Səbətiniz boşdur
+                        button#shop 
+                            a(href="/products") Alış veriş et 
+                #products-wrapper
+                button#go-to-basket 
+                    a(href="/cart") Səbət 
+                    
+                    
+
+                        
+.container.el-center#menu-container
+
+    ul#menu 
+        li.mobile-item 
+            a(href="/") 
+                img(src="/icons/main-logo.svg" alt="") 
+        #menu-search.mobile-item 
+            input(type="text" placeholder="Mağazada Axtar")#menu-search-input
+            <i class="fa-thin fa-magnifying-glass"></i>
+
+        li
+            a(href="/")  Ana Səhifə
+        li 
+            a(href="/cart") Səbət 
+        li 
+            a(href="/products") Məhsullar
+        li 
+            a(href="/track-order") Sifariş
+#open-menu-btn.container
+    span Menyu 
+    span 
+        i.fa-light.fa-bars#open-mb-menu 
+
+    script(type="module" src="/js/models/navModel/navController.js")

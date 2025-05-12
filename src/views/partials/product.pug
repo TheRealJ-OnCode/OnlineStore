@@ -1,0 +1,18 @@
+mixin product(name,link,img,price,discount,pid)
+    .product 
+        .product-img 
+            a(href= link) 
+                img(src= img alt="IMAGE").product-banner-img
+                //- .icons
+                //-     a(href="/add-to-card?product_name="+name+"&pid="+pid) 
+                //-         <i class="fa-solid fa-cart-shopping"></i>
+                //-     a(href=link) 
+                //-         <i class="fa-solid fa-eye"></i>
+                if discount > 0
+                    .product-discount="- " + discount + "%" 
+
+        .product-name
+            span= name 
+        .product-price 
+            span= price
+            

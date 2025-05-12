@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    include /partials/base/config.pug
+    //- ! include partials
+    link(rel="stylesheet" href="/css/partials/nav.css")
+    link(rel="stylesheet" href="/css/partials/footer.css")
+
+    link(rel="stylesheet" href="/css/partials/shop-aside.css")
+    link(rel="stylesheet" href="/css/partials/product/product.css")
+    link(rel="stylesheet" href="/css/shop.css")
+
+    title Shop
+body 
+    include /partials/breadcrumb.pug
+    include /partials/nav.pug
+    include /partials/shop/shop-banner.pug
+        +breadcrumb([
+    { text: "Ana Səhifə", link: "/" },
+    { text: "Məhsullar", link: "/products",active : true }
+])
+    main.container 
+        include /partials/shop/shop-aside.pug
+        include /partials/shop/shop-products.pug
+    include /partials/footer.pug
+    script(src="/js/models/shopPageModel/shopController.js" type="module") 

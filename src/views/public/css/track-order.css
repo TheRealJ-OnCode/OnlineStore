@@ -1,0 +1,60 @@
+#track-order {
+    width: 100%;
+    height: calc(100vh - 130px);
+    background-image: url("../imgs/track-bg.jpg");
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+#mmmtext {
+    text-align: center;
+    margin: 10px 0;
+}
+#order-content {
+    display: none;
+    flex-direction: column;
+    margin-top: 50px;
+}
+#order-content ul {
+    margin: 0 auto;
+    background-color: #fafafa;
+    opacity: 0.8;
+}
+#order-content ul li {
+    padding: 10px 0;
+    list-style: inside;
+}
+#search-order {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#search-order input {
+    background-color: transparent;
+    border: 1px solid #000;
+    height: 30px;
+    outline: none;
+    font-size: 1.1rem;
+    width: 60%;
+    padding: 0 10px;
+}
+#search-order button {
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #b90707;
+    outline: none;
+    color: #fff;
+    border-radius: 0.3rem;
+    border: none;
+    padding: 5px 20px;
+}
+@media screen and (max-width: 350px) {
+    #search-order {
+        flex-direction: column;
+   }
+    #search-order input, #search-order button {
+        margin-top: 10px;
+   }
+}

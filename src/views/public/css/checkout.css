@@ -1,0 +1,119 @@
+main #cart-products {
+	 padding: 20px 0;
+	 width: 100%;
+	 display: grid;
+	 grid-template-columns: repeat(10, 1fr);
+	 gap: 10px;
+}
+ main #cart-products .cart-product {
+	 width: 100%;
+	 min-height: 122px;
+	 display: flex;
+	 flex-direction: column;
+}
+ main #cart-products .cart-product img {
+	 width: 100%;
+	 height: 100px;
+}
+ main #cart-products .cart-product .price {
+	 text-align: center;
+	 color: #b90707;
+	 font-weight: bold;
+	 margin: 5px 0;
+}
+ main #user-info {
+	 margin: 20px 0;
+}
+ main #user-info input {
+	 width: 100%;
+	 height: 35px;
+	 font-size: 1.1rem;
+	 padding: 10px;
+	 outline: none;
+	 margin: 10px 0;
+	 border: 1px solid #b2b2b2;
+}
+ main #user-info #phone-container > div {
+	 display: flex;
+	 align-items: center;
+}
+ main #user-info #phone-container > div select {
+	 height: 35px;
+	 background-color: transparent;
+	 border: 1px solid #b2b2b2;
+	 outline: none;
+}
+ main #user-info #payment-method-wrapper {
+	 display: flex;
+	 flex-direction: column;
+}
+ main #user-info #payment-method-wrapper #payment-method {
+	 height: 30px;
+	 margin: 10px 0;
+	 font-weight: bold;
+}
+ main #contrats {
+	 padding: 10px;
+	 width: 100%;
+	 border: 1px solid #ededed;
+}
+ main #contrats #contrats-header {
+	 font-weight: bold;
+	 text-align: center;
+	 font-size: 1.1rem;
+	 padding: 10px 0;
+}
+ main #contrats .contrat-wrapper {
+	 border-radius: 1rem;
+	 background-color: #fafafa;
+	 padding: 20px;
+	 height: 160px;
+	 color: #999;
+	 overflow-y: scroll;
+	 margin: 20px 10px;
+}
+ main #contrats .contrat-text {
+	 font-size: 14px;
+	 font-weight: 600;
+	 margin-bottom: 10px;
+}
+ main #contrats .contrat-wrapper > p::-webkit-scrollbar {
+	 background: #d8d8d8;
+	 width: 7px;
+	 border-radius: 3px;
+}
+ main #contrats .contrat-wrapper > p::-webkit-scrollbar-thumb {
+	 background: #7a7a7a;
+	 border-radius: 3px;
+}
+ main #confirm-order {
+	 margin: 10px auto;
+	 display: block;
+	 padding: 5px 50px;
+	 font-weight: bold;
+	 color: #ededdd;
+	 background-color: #b90707;
+	 outline: none;
+	 border: none;
+	 font-size: 1.1rem;
+	 cursor: pointer;
+	 border-radius: 0.5rem;
+}
+ @media screen and (max-width: 1025px) {
+	 .price {
+		 font-size: 12px;
+	}
+	 .cart-product img {
+		 width: 85px;
+		 height: auto;
+	}
+}
+ .product-count, .product-price, .product-total {
+	 font-size: 0.8rem;
+	 font-weight: bold;
+	 margin: 3px 0;
+}
+ h3 {
+	 margin: 10px 0;
+}
+ 

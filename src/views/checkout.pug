@@ -1,0 +1,86 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Ödəniş
+        //- ! include base css
+        include /partials/base/config.pug
+        //- ! include partials css
+        link(rel="stylesheet" href="/css/partials/nav.css")
+        //- ! include page special css
+        link(rel="stylesheet" href="/css/checkout.css")
+        
+    body 
+        include /partials/nav.pug
+        main.container  
+            #cart-products 
+                each product in userCart 
+                    .cart-product 
+                        a(href="/product/view?product_name="+product.name+"&pid="+product.productId)
+                            img(src=product.img alt=product.name) 
+                        .product-count= "Say: " +  product.quantity 
+                        .product-price= "Qiymət: " +product.price + " azn"
+                        .product-total= "Toplam: " + product.total
+            hr
+            h3= "Ödəniləcək Məbləğ : "+cartTotal + " azn" 
+            form#user-info
+                #payment-method-wrapper
+                    label(for="city") Şəhər
+                    select#city(name="city" disabled)
+                        option(value="0" disabled selected) Ismayıllı
+                label(for="name")  Ad
+                input#name(type="text" )
+                label(for="surname")  Soyad
+                input#surname(type="text")
+                label(for="address")  Adres
+                input#address(type="text")
+                #phone-container
+                    label(for="phone")  Telefon
+                    div
+                        select#prefix(name="prefix")
+                            option(value="070") 070
+                            option(value="077") 077   
+                            option(value="099") 099   
+                            option(value="055") 055 
+                            option(value="010") 010 
+                            option(value="050") 050
+                            option(value="051") 051
+                        input#phone(type="text").numeric-input 
+                #payment-method-wrapper 
+                    label(for="payment-method") Ödəniş Üsulu 
+                    select#payment-method(name="payment-method" disabled)
+                        option(value="0" selected) Qapıda ödəmə  
+            //- #contrats
+            //-     #contrats-header Sözləşmə və Formlar
+            //-     .contrat-text Lorem, ipsum.
+            //-     .contrat-wrapper
+            //-         p ipsum dolor sit amet consectetur adipisicing elit. Adipisci placeat autem necessitatibus alias soluta omnis nisi fuga, sed nemo odio rerum eum consectetur quod mollitia reiciendis cupiditate, tenetur, animi aspernatur et fugit eveniet! Illum ipsam porro obcaecati deserunt et omnis esse, ea, nihil eius quo voluptas dolores dolorem vero magni impedit? Provident, est mollitia. Esse, veniam maxime! Quo rerum veniam modi beatae eaque at quia accusantium aperiam, voluptatem consectetur sunt explicabo corrupti aut! Eaque id reprehenderit maxime magni dolorum. Quos necessitatibus impedit temporibus, atque rerum vel expedita amet illum asperiores explicabo eos blanditiis nulla voluptate quisquam quae exercitationem, aspernatur illo minus voluptas. Error incidunt assumenda, consectetur aliquam deserunt eum numquam culpa enim ipsum, quas neque doloremque magnam quam quis? Cum sequi cumque beatae quia provident earum accusantium non voluptates harum ex ut, molestias repudiandae veritatis et, accusamus quaerat commodi dolorum minus alias. Dicta, vel quidem! Pariatur nobis a laborum porro fugit. Magnam magni vel, dolorum facilis corrupti eum provident culpa ratione consectetur temporibus. Repellat cum, culpa explicabo tenetur eos fugit non obcaecati quas, atque, quidem dolore molestiae ea delectus molestias corrupti et iusto commodi nobis sapiente. Pariatur dolorem amet at doloremque excepturi, quo corporis neque voluptatem eius mollitia similique quasi cum, a provident libero? Accusantium veniam asperiores, optio sapiente, laborum vel repudiandae assumenda temporibus, veritatis delectus quis? Excepturi iure laboriosam delectus veritatis quis pariatur. Doloremque aliquam incidunt ut blanditiis ad placeat, repellat ducimus eos adipisci fuga impedit inventore consectetur mollitia, quaerat saepe a sequi veniam et, amet quis totam. Eius, incidunt nemo? Ad vero saepe eligendi odit deserunt, cupiditate iure assumenda officia, impedit vel dolorum in, iusto culpa doloremque iste quaerat voluptates aut incidunt? Libero consectetur doloribus nemo dignissimos sint at repellat officiis impedit, explicabo reprehenderit enim et excepturi, dicta rem minus deserunt eaque quo! In adipisci cum ea culpa! Eum hic sit corporis nemo illum eligendi, ipsam deleniti blanditiis eos laboriosam libero dolor quaerat dolorum quam officia debitis ullam autem sunt commodi nisi, repellat omnis esse? Quas, voluptatibus vero. Officiis officia blanditiis quos ut commodi perspiciatis, error, sint similique enim deleniti eius perferendis voluptatem aspernatur ipsam delectus est sunt! Quaerat minima ducimus delectus consectetur modi perferendis illo, voluptatem, quis accusantium deserunt aliquam totam officia tempore distinctio dolorum quae eius voluptates rerum ex cupiditate perspiciatis saepe! Dolore velit cum similique repudiandae veniam laboriosam, expedita explicabo est nulla nostrum repellat molestias saepe, dolores aliquam, pariatur recusandae? Eaque earum minima distinctio dolores inventore incidunt! Tempore odio esse aut ratione nobis animi itaque, minus non eum deserunt, ullam mollitia dolorem assumenda quas, cupiditate qui rem reiciendis placeat quo necessitatibus saepe soluta? In cum reprehenderit nisi sapiente! Blanditiis accusantium, hic possimus vitae animi ab sint doloribus, dolor sequi qui nam reiciendis dolorem sit voluptatibus quae eius delectus beatae quod vel voluptatem. Doloremque fuga, sint cupiditate officia id rerum alias exercitationem quia laboriosam. Nam excepturi omnis modi. Deserunt libero ut similique minima expedita esse rem incidunt dolorum beatae, ipsam consequatur quia dolor eligendi voluptatem maxime earum eum aut illum culpa laudantium doloribus! Quos, expedita rerum?
+            //-     .contrat-text Lorem, ipsum.
+            //-     .contrat-wrapper
+            //-         p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet dolores atque impedit nobis, corrupti accusantium doloremque totam expedita soluta iure officiis, nulla cum. Voluptatibus exercitationem ullam, molestiae quam consequuntur hic cumque repellat veniam voluptas mollitia. Quis aliquam eaque nesciunt nisi, soluta amet suscipit inventore impedit officia provident incidunt, corporis error fugiat? Vel est reprehenderit quia fugit, sint iure perspiciatis odio magnam recusandae exercitationem obcaecati architecto optio rem beatae natus ea adipisci cumque dolore harum eius neque, pariatur quidem esse. Mollitia ratione voluptate pariatur nihil totam voluptatibus soluta adipisci atque praesentium doloremque? Provident perferendis eum eveniet? Minus magni, accusamus alias earum aliquam est a laboriosam optio consequuntur. Molestiae impedit ipsum quod dolores, molestias ratione quae dolorum, omnis doloribus esse excepturi ut temporibus vel officia possimus obcaecati minus quia. Natus quam non velit modi dolorem repellat quia dolores ea deleniti quidem. Magnam obcaecati, vero officiis tempore cumque aut nesciunt ea fugiat temporibus voluptates! Vel, omnis tempore. Autem, ab rerum soluta doloribus sint consequatur animi ex ducimus totam nam tempora facere temporibus aspernatur repudiandae incidunt eveniet sit atque necessitatibus? Ratione molestias fugit ipsum, dolor perspiciatis nostrum aliquam libero deserunt, maiores similique ab soluta, non dolores aut voluptas nulla aspernatur accusantium possimus eos quis odio? Vel amet illum, temporibus et tempora asperiores dignissimos eum nisi sed fuga perferendis? Animi, corporis rerum? Recusandae maiores molestias atque ipsa optio ad, et maxime consequuntur corporis, temporibus doloribus laudantium dolore quae suscipit explicabo facilis ab molestiae quis. Perspiciatis dolores repellendus tempore animi, eveniet quasi unde blanditiis excepturi rem aut cum quia optio, suscipit deserunt maiores illo doloremque asperiores non architecto nisi, vero in. Doloribus sed ullam maxime aliquam neque alias consequatur quo, repellat omnis error aut vitae. Dolores suscipit molestiae modi itaque pariatur reprehenderit quam distinctio error. Consequuntur quisquam nesciunt ratione sed similique, iste blanditiis neque alias laborum quasi odit voluptatibus rerum ut rem quidem iure! Esse, ut error fugiat repellat quis similique dolorem hic. Nam ut voluptas voluptatem totam accusamus accusantium quia voluptatum, neque iste atque illum dolores unde hic velit. Mollitia provident aut magni quidem quo sunt ducimus qui itaque, dicta, sit consequuntur, ratione quos libero eius exercitationem facere! Dolores exercitationem inventore ipsum provident quaerat accusamus dolorum obcaecati, qui voluptates at sequi aspernatur, est nisi error fugit. Repellat dignissimos voluptates aliquid alias vero ipsam quaerat quo, perspiciatis consectetur ullam maiores distinctio praesentium sequi reprehenderit, placeat dolorum rerum, quae sit excepturi totam et nisi dolorem? Beatae fuga adipisci sit mollitia, officiis odit illum deserunt impedit veritatis soluta earum doloremque quaerat pariatur commodi optio quis magnam laudantium libero, veniam quibusdam, illo nemo aliquid modi? Neque aut officiis commodi vel cum. Laboriosam harum minus distinctio quisquam deleniti molestiae nostrum facilis? Neque quo maxime nostrum culpa repudiandae ab cum nihil et perferendis, animi, quas maiores! Quae debitis doloremque at tenetur quasi perspiciatis animi ipsa doloribus, iste nihil dicta cupiditate, explicabo totam nemo iure ratione inventore. Corporis quos necessitatibus itaque voluptatibus iusto vero corrupti quia numquam ullam, beatae accusantium dolorum molestias possimus. Animi maiores quam laborum nulla in a aliquam distinctio.
+            //-     .contrat-text Lorem, ipsum.
+            //-     .contrat-wrapper
+            //-         p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, sequi alias laudantium quasi totam blanditiis quia? A adipisci ducimus architecto quae eveniet reiciendis, ipsa atque vel velit neque, necessitatibus veniam. Qui, veritatis exercitationem. Placeat ea fuga cupiditate facere nam facilis commodi ipsum. Dignissimos error quos quaerat odit assumenda esse aut placeat, sapiente, quisquam, explicabo eum velit est voluptate corporis dolorum a distinctio itaque quis. Omnis perspiciatis consequuntur voluptatibus dolor et fuga architecto repellendus sequi repellat explicabo tempore quis laudantium, corporis dolores harum eius nobis nulla temporibus aut! Vero natus reiciendis dicta? Nostrum officia voluptate et, deleniti ullam eligendi, repudiandae odit ducimus cumque enim ipsa quae aut commodi expedita neque facilis reiciendis aspernatur illo, corrupti recusandae nihil mollitia obcaecati esse? Ea, facilis harum doloremque pariatur impedit, commodi et perferendis laboriosam veniam dolore esse doloribus earum eaque facere nihil aspernatur! Maiores ab dolor eius a nam, rerum at sequi quas ratione explicabo laudantium quibusdam ipsam nemo illo nostrum error earum libero tempore obcaecati aperiam! Quos nostrum vero consequuntur aut, voluptatem veniam omnis porro, eius pariatur aspernatur numquam cupiditate ea quod quibusdam nam dolorem. Nam quia nisi possimus dolore quos debitis cum earum temporibus suscipit consequatur? Maxime blanditiis sed porro dolores officia voluptate eius eveniet fuga possimus, nihil doloremque! Deleniti, voluptatum voluptas. Ullam nihil numquam dolore, quia qui quidem repudiandae harum distinctio voluptatum deserunt fugit iure cum ipsam doloribus officiis dolorem vitae quas ex, eligendi sunt. Reprehenderit tempora dolore adipisci ullam, aut dicta error eaque. Optio voluptate officiis eius rerum molestiae saepe, ea reiciendis debitis placeat nihil totam ipsum et quam in. Iusto illum repellendus saepe, mollitia nobis sapiente! Officiis delectus omnis voluptatibus. Iusto architecto labore deleniti distinctio, maiores inventore ex tempore eos fugiat fuga quasi veritatis aspernatur libero asperiores blanditiis quae animi consequuntur, odio reprehenderit possimus quis provident dolorum doloremque. Soluta veniam, sit, consectetur exercitationem ipsam accusantium incidunt ullam corrupti accusamus ad debitis est labore rem quaerat. Laborum fugit accusantium sunt harum necessitatibus odio inventore dolorum doloribus. Impedit temporibus, similique consequatur facilis neque at laudantium voluptatem laborum illum sequi nihil repellat, iusto inventore autem harum cumque aliquam odit, repellendus vitae voluptas. Officiis modi necessitatibus impedit. Harum nihil alias, consequatur voluptatem consequuntur ea aliquid cupiditate repellendus saepe excepturi! Aut eaque accusamus quos natus fugiat debitis ipsa, voluptate molestiae. Illo architecto iste quo dicta rem eius at velit, quos rerum nisi deserunt reprehenderit obcaecati ut porro beatae! Sapiente, facilis soluta commodi doloremque, architecto reprehenderit nihil molestias repudiandae corporis consectetur voluptatem illum velit praesentium cumque? Numquam assumenda dolores minima debitis recusandae rem quam dignissimos! Esse quidem sunt deleniti cupiditate, minima porro asperiores in illum, id ex nisi dicta. Doloribus numquam accusamus aspernatur voluptate reprehenderit exercitationem? Animi quae quas repellendus facere commodi quam illo obcaecati nihil totam nam voluptas suscipit, accusantium libero labore veritatis? Id maxime tenetur officiis aut, perferendis voluptate minus fugit recusandae quae fugiat. Minus consectetur voluptatum odit eum perspiciatis rem quidem. Deserunt facere minus inventore voluptates unde neque, ipsum saepe blanditiis vel? Laboriosam deserunt optio velit natus commodi quaerat cupiditate culpa illo libero.
+            
+            button#confirm-order Təsdiqlə 
+    script(src="https://unpkg.com/sweetalert/dist/sweetalert.min.js") 
+
+    script(type="module", src="/js/models/checkoutPageModel/checkoutController.js") 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

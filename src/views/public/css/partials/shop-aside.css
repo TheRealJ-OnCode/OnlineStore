@@ -1,0 +1,186 @@
+#shop-aside {
+    width: 300px;
+}
+
+#filters>div {
+    width: 100%;
+    border: 1px solid #ededed;
+    margin: 30px 0 0 0;
+    padding: 10px;
+}
+
+.filter-text {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.filter-text .op-cl-menu {
+    width: 20px;
+    height: 3px;
+    border-radius: 1rem;
+    background-color: #8cb2b2;
+}
+
+.filter-content {
+    font-size: 1.1rem;
+    margin: 10px 00 00 00;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 250ms ease, visibility 0ms linear 250ms;
+}
+
+.filter-content.active {
+    visibility: visible;
+    max-height: 500px;
+    transition: max-height 250ms ease, visibility 0ms linear 0ms;
+}
+
+#clear-filters {
+    background-color: #B90707;
+    margin-top: 30px;
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+#stock-filter {
+    margin-top: 10px !important;
+}
+
+#stock-filter .filter-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#stock-filter .filter-content .-l-i-container:not(:first-child) {
+    margin-top: 10px;
+}
+
+.-l-i-container {
+    display: flex;
+    align-items: center;
+}
+
+.-l-i-container input {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.-l-i-container label {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 0 0 10px;
+    font-weight: 600;
+}
+
+#price-filter .filter-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#price-filter .filter-content div {
+    display: flex;
+}
+
+#price-filter .filter-content div .-l-i-container {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+
+#price-filter .filter-content div .-l-i-container label {
+    color: #8cb2b2;
+    padding: 0;
+}
+
+#price-filter .filter-content div .-l-i-container input {
+    outline: none;
+    margin: 5px 0;
+    border: 1px solid #e5e5e5;
+    width: 80%;
+    padding: 0% 10px;
+    height: 40px;
+    font-weight: 600;
+}
+
+#price-filter .filter-content .btn:hover {
+    color: #fff;
+    border-color: #B90707;
+}
+
+#price-filter .filter-content .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #B90707;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transform: scaleX(0);
+}
+
+#price-filter .filter-content .btn:hover::before {
+    transform: scaleX(1);
+}
+
+#category-filter .filter-content .-l-i-container {
+    margin: 10px 0;
+}
+
+#category-filter .filter-content .-l-i-container label {
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 900px) {
+    #shop-aside {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #shop-aside {
+        width: 70%;
+    }
+
+    .filter-text {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 334px) {
+    #shop-aside {
+        width: 80%;
+    }
+}
+
+#apply-filters {
+    border: none !important;
+    margin: 30px 0 !important;
+    padding: 0 !important;
+}
+
+.btn#filter-prices {
+    background: none;
+    border: 1px solid #000;
+    padding: 5px 30px;
+    margin: 10px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}

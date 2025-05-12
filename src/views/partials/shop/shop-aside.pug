@@ -1,0 +1,50 @@
+#shop-aside 
+    #filters 
+        button#clear-filters Filtrləri Təmizlə
+        #stock-filter 
+            .filter-text
+
+                span Stokda Mövcudluğu
+                span.op-cl-menu  
+
+            .filter-content.active 
+                .-l-i-container 
+                    input.stock-filter#inStock(type="radio" name="stock") 
+                    label(for="inStock")  Var 
+                .-l-i-container
+                    input.stock-filter#outOfStock(type="radio" name="stock") 
+                    label(for="outOfStock")  Yoxdur
+
+
+        #price-filter
+            .filter-text
+
+                span Qiymət 
+                span.op-cl-menu  
+            .filter-content.active  
+                div 
+                    .-l-i-container 
+                        label(for="min" ) Min <i class="fa-regular fa-manat-sign"></i>
+                        input#min(type="text" maxlength=3 placeholder = "0").numeric-input 
+                    .-l-i-container 
+                        label(for="max") Max <i class="fa-regular fa-manat-sign"></i>
+                        input#max(type="text" maxlength=4 placeholder = "100000").numeric-input 
+
+        #category-filter
+            .filter-text
+
+                span Kategoriya
+                span.op-cl-menu  
+
+            .filter-content 
+                each category,index in categories
+                    .-l-i-container 
+                        input.category-filter-checkbox(type="checkbox" name=category id=`${index}`) 
+                        label(for=index)=category 
+        #apply-filters 
+            button.btn#filter-prices Filtrlə 
+
+                
+
+
+

@@ -30,7 +30,7 @@ connectDB().then(() => {
         console.log(`Server running on port : ${PORT}`);
     });
 
-    app.use(restirictAccessibility);
+    // app.use(restirictAccessibility);
     app.use(Router);
     app.use(pageNotFound404);
 
